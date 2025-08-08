@@ -1,0 +1,36 @@
+version: '3.8'
+
+volumes:
+  getraenkekasse-db:
+  getraenkekasse-data:
+
+services:
+  getraenkekasse-db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ricky
+      POSTGRES_PASSWORD: 21hlf20
+      POSTGRES_DB: getraenkekasse
+    volumes:
+      - getraenkekasse-db:/var/lib/postgresql/data
+    networks:
+      - webnet
+
+  getraenkekasse-web:
+    build: ./web
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=getraenkekasse-db
+      - DB_NAME=getraenkekasse
+      - DB_USER=ricky
+      - DB_PASS=21hlf20
+    depends_on:
+      - getraenkekasse-db
+    networks:
+      - webnet
+
+
+
+networks:
+  webnet:
