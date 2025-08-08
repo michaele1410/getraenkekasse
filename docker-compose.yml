@@ -2,7 +2,6 @@ version: '3.8'
 
 volumes:
   getraenkekasse-db:
-  getraenkekasse-data:
 
 services:
   getraenkekasse-db:
