@@ -8,8 +8,8 @@ services:
   getraenkekasse-db:
     image: postgres:15
     environment:
-      POSTGRES_USER: ricky
-      POSTGRES_PASSWORD: 21hlf20
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: johndoe
       POSTGRES_DB: getraenkekasse
     volumes:
       - getraenkekasse-db:/var/lib/postgresql/data
@@ -23,8 +23,8 @@ services:
     environment:
       - DB_HOST=getraenkekasse-db
       - DB_NAME=getraenkekasse
-      - DB_USER=ricky
-      - DB_PASS=21hlf20
+      - DB_USER=admin
+      - DB_PASS=johndoe
     depends_on:
       - getraenkekasse-db
     networks:

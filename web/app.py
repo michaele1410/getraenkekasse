@@ -7,8 +7,8 @@ app = Flask(__name__)
 # DB-Konfiguration über Umgebungsvariablen
 DB_HOST = os.getenv("DB_HOST", "localhost")
 DB_NAME = os.getenv("DB_NAME", "getraenkekasse")
-DB_USER = os.getenv("DB_USER", "ricky")
-DB_PASS = os.getenv("DB_PASS", "21hlf20")
+DB_USER = os.getenv("DB_USER", "admin")
+DB_PASS = os.getenv("DB_PASS", "johndoe")
 
 def get_db_connection():
     return psycopg2.connect(
